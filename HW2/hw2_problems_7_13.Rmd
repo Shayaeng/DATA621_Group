@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r libraries}
 library(tidyverse)
 library(caret)
+library(pROC)
 ```
 
 ```{r data}
@@ -38,13 +39,24 @@ The confusion matrix output shows us the accuracy of the predictions on both pos
 
 **7- Write a function that takes the data set as a dataframe, with actual and predicted classifications identified, and returns the specificity of the predictions.** $$\text{Specificity} = \frac{TN}{TN + FP}$$
 
-```{r specificity}
+```{r specificity-function}
 specificity <- function(data, actual_col, predicted_col){
     TN <- sum(data[[actual_col]] == 0 & data[[predicted_col]] == 0)
     FP <- sum(data[[actual_col]] == 0 &data[[predicted_col]] == 1)
     specificity <- TN / (TN + FP)
     return(specificity)
 }
+```
 
+In the above code we initialized a function that calculates the TN and FP of the given dataframe and uses that to return the specificity. Now let's run the fuction on our data.
+
+```{r}
 specificity(data, "class", "scored.class")
 ```
+
+The returned specificity of our predictions is **0.9596774**
+
+**13-  Investigate the pROC package. Use it to generate an ROC curve for the data set. How do the results compare with your own functions?
+
+```{r proc}
+
