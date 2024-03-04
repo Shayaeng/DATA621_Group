@@ -48,7 +48,7 @@ specificity <- function(data, actual_col, predicted_col){
 }
 ```
 
-In the above code we initialized a function that calculates the TN and FP of the given dataframe and uses that to return the specificity. Now let's run the fuction on our data.
+In the above code we initialized a function that calculates the TN and FP of the given dataframe and uses that to return the specificity. Now let's run the function on our data.
 
 ```{r}
 specificity(data, "class", "scored.class")
