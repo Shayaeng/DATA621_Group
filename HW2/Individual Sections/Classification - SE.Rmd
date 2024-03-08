@@ -2,7 +2,7 @@
 title: "Data 621 HW 2"
 author: "Shaya Engelman"
 date: "2024-03-04"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -56,7 +56,6 @@ specificity(data, "class", "scored.class")
 
 The returned specificity of our predictions is **0.9596774**
 
-**13-  Investigate the pROC package. Use it to generate an ROC curve for the data set. How do the results compare with your own functions?
+\*\*13- Investigate the pROC package. Use it to generate an ROC curve for the data set. How do the results compare with your own functions?
 
-```{r proc}
-
+\`\`\`{r proc}
